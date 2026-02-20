@@ -1,0 +1,4 @@
+flask
+assemblyai
+requests
+gunicorn
