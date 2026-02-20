@@ -2,7 +2,8 @@ import assemblyai as aai
 from flask import Flask, request, render_template_string, Response
 
 app = Flask(__name__)
-aai.settings.api_key = "e4788fc63f2243dba6ad319ad1704519"
+import os
+aai.settings.api_key = os.environ.get("ASSEMBLYAI_API_KEY")
 
 HTML = """
 <!DOCTYPE html>
@@ -101,4 +102,5 @@ def download():
     )
 
 if __name__ == "__main__":
+
     app.run(debug=True)
